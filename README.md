@@ -6,6 +6,7 @@
     * [What ssh affects](#what-ssh-affects)
     * [Setup requirements](#setup-requirements)
     * [Beginning with ssh](#beginning-with-ssh)
+
 ## Overview
 
 Governs contents of sshd\_config including multiple choice options like Port and
@@ -46,45 +47,45 @@ Requires stdlib.
 
 ### Beginning with ssh
 
-ex.:
-hierassh::params::config:
-  #ListenAddress: '0.0.0.0'
-
-  UsePrivilegeSeparation: 'yes'
-
-  # Authentication:
-  LoginGraceTime: '120'
-  PermitRootLogin: 'without-password'
-  StrictModes: 'yes'
-
-  # Other
-  RSAAuthentication: 'yes'
-  PubkeyAuthentication: 'yes'
-  IgnoreRhosts: 'yes'
-  RhostsRSAAuthentication: 'no'
-  HostbasedAuthentication: 'no'
-  IgnoreUserKnownHosts: 'yes'
-  PermitEmptyPasswords: 'no'
-  ChallengeResponseAuthentication: 'no'
-  UsePAM: 'yes'
-  UseDNS: 'no'
-
-  # Change to no to disable tunnelled clear text passwords
-  #PasswordAuthentication: yes
-
-  X11Forwarding: 'yes'
-  X11DisplayOffset: '10'
-  PrintMotd: 'no'
-  PrintLastLog: 'yes'
-  TCPKeepAlive: 'yes'
-
-  MaxStartups: '20:40:60'
-  #Banner: '/etc/issue.net'
-
-  # For new augeas (1.2.x), for old version use string.
-  Ciphers: 
-    - aes128-ctr
-    - aes192-ctr
-    - aes256-ctr
+    ex.:
+    hierassh::params::config:
+      #ListenAddress: '0.0.0.0'
+    
+      UsePrivilegeSeparation: 'yes'
+    
+      # Authentication:
+      LoginGraceTime: '120'
+      PermitRootLogin: 'without-password'
+      StrictModes: 'yes'
+    
+      # Other
+      RSAAuthentication: 'yes'
+      PubkeyAuthentication: 'yes'
+      IgnoreRhosts: 'yes'
+      RhostsRSAAuthentication: 'no'
+      HostbasedAuthentication: 'no'
+      IgnoreUserKnownHosts: 'yes'
+      PermitEmptyPasswords: 'no'
+      ChallengeResponseAuthentication: 'no'
+      UsePAM: 'yes'
+      UseDNS: 'no'
+    
+      # Change to no to disable tunnelled clear text passwords
+      #PasswordAuthentication: yes
+    
+      X11Forwarding: 'yes'
+      X11DisplayOffset: '10'
+      PrintMotd: 'no'
+      PrintLastLog: 'yes'
+      TCPKeepAlive: 'yes'
+    
+      MaxStartups: '20:40:60'
+      #Banner: '/etc/issue.net'
+    
+      # For new augeas (1.2.x), for old version use string.
+      Ciphers: 
+        - aes128-ctr
+        - aes192-ctr
+        - aes256-ctr
 
 
