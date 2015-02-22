@@ -1,0 +1,16 @@
+<% if @multiple -%>
+
+rm <%= @option %>[position() > <%= @value.length %> ]
+
+<% @value.each_with_index do |val, index| -%>
+set <%= @option %>[<%= index + 1 %>] <%= val %>
+<% end -%>
+
+<% else %>
+
+rm <%= @option %>/*
+
+<% @value.each_with_index do |val, index| -%>
+set <%= @option %>/<%= index + 1 %> <%= val %>
+<% end -%>
+<% end -%>
